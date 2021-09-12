@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block _content %}
+
+<style>
+  body{
+    background-color: rgba(2, 72, 100, 0.74);
+  }
+  .container{
+    background-color:rgba(255, 255, 255, 0.164);
+    box-shadow: hsl(0, 0%, 0%) 0px 0px 20px 5px;
+    border-radius: 10px;
+  }
+</style>
+
+<section class="container mt-5 text-dark py-2">
+  <h1 class="text-center">Isi Biodata Berikut</h1>
+  <form action="{{ url_for('tambah_mhs') }}" method="POST" class="font-weight-bold">
+    <div class="mb-3">
+      <label for="nama" class="form-label">Nama Lengkap</label>
+      <input type="text" class="form-control" placeholder="Nama Lengkap" id="nama" name="nama", required>
+    </div>
+    <div class="mb-3">
+      <label for="jurusan" class="form-label">Jurusan</label>
+      <input type="text" class="form-control" placeholder="Akuntansi / Manajemen / Ilmu Ekonomi" id="Jurusan" name="jurusan">
+    </div>
+    <div class="mb-3">
+      <label for="tanggal_lahir" class="form-label">Tanggal Lahir</label>
+      <input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir">
+    </div>
+    <button type="registrasi" class="btn btn-dark">Submit</button>
+  </form>
+</section>
+
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block _content %}
+
+<style>
+  body{
+    background-color: rgba(2, 72, 100, 0.74);
+  }
+
+</style>
+
+<section class="container text-dark mt-5" style="background-color:rgba(255, 255, 255, 0.164);
+box-shadow: hsl(0, 0%, 0%) 0px 0px 20px 5px;
+border-radius: 10px;
+width: 40%;">
+  <h1 class="text-center">Log In</h1>
+  <form action="{{ url_for('login') }}" method="POST">
+    <div class="mb-3">
+      <label for="email" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="email" name="email", required>
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" class="form-control" id="Password" name="password", required>
+    </div>
+    <button type="submit" class="btn btn-dark mb-3 mr-3">Submit</button> <p style="display: inline; color:white ">don't have an account..? <a class="text-dark" href="/register">click here to register !</a></p>
+  </form>
+</section>
+
+
+
+{% endblock %}

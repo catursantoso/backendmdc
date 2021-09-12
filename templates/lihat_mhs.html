@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block _content %}
+
+<h1 class="text-danger">DATA ANDA</h1>
+
+<ul class="list-group">
+    <li class="list-group-item list-group-item-action">Nama : {{ user.nama }}</li>
+    <li class="list-group-item list-group-item-action">Jurusan : {{ user.jurusan }}</li>
+    <li class="list-group-item list-group-item-action">Tanggal Lahir : {{ user.tanggal_lahir }}</li>
+</ul>
+<a href="/mahasiswa"><button type="button" class="btn btn-warning mt-3">Kembali ke Data Mahasiswa</button></a>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block _content %}
+<style>
+    th{
+        padding: 10px;
+        background-color: rgb(125, 234, 193);
+    }
+    td{
+        padding: 10px;
+        background-color: rgb(192, 192, 192);
+    }
+    table{
+        border-collapse: collapse;
+        width: 100%;
+    }
+    body{
+        background-color: rgba(2, 72, 100, 0.74);
+    }
+ 
+</style>
+
+<section class="container">
+    <h1 class="text-dark text-center mt-3 font-weight-bold">Data Mahasiswa</h1>
+    <table border="2">
+        <tr style="border-bottom: solid black 3px;">
+            <th>NAMA</th>
+            <th>JURUSAN</th>
+            <th class="text-center">TANGGAL LAHIR</th>
+            <th class="text-center">AKSI</th>
+        </tr>
+        {% for m in data %}
+        <tr>
+            <td>{{ m["nama"] }}</td>
+            <td>{{ m["jurusan"] }}</td>
+            <td class="text-center">{{ m["tanggal_lahir"] }}</td>
+            <td class="text-center">
+                <a href="/mahasiswa/ubah/{{ m.id }}">Ubah</a>
+                <a href="/mahasiswa/lihat/{{ m.id }}">| Lihat |</a>
+                <a href="/mahasiswa/hapus/{{ m.id }}">Hapus</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/mahasiswa/tambah"><button type="button" class="btn btn-dark mt-3">Tambah Mahasiswa</button></a>
+
+</section>
+
+{% endblock %}
